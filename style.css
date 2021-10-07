@@ -1,0 +1,121 @@
+*{
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   font-family: Helvetica, sans-serif;
+}
+
+nav{
+   position: fixed;
+   z-index: 99;
+   height: 3.5rem;
+   width: 100%;
+   background: #3a89ff;
+}
+
+label{
+   padding-top: 20px;
+   margin-left: 5vw;
+   font-size: clamp(20px, 30px, 40px);
+   font-weight: 800;
+   color: #fff;
+}
+
+nav ul{
+   float: right;
+   margin-right: 2vw;
+   text-transform: uppercase;
+   transition: 0.8s;
+}
+
+nav ul li{
+   list-style: none;
+   display: inline-block;
+   font-size: 14px;
+   margin: 20px 14px;
+}
+
+nav ul li a{
+   text-decoration: none;
+   color: #fff;
+}
+
+a:active, a:hover{
+   color: #a9ccff;
+}
+
+section{
+   position: absolute;
+   width: 100%;
+   height: 100vh;
+   background-image: url('desk.jpg');
+   background-size: cover;
+   background-position: center;
+}
+
+.bars{
+   padding-top: 5px;
+   margin-right: 5vw;
+   display: none;
+   float: right;
+   cursor: pointer;
+ }
+ 
+ .bar1, .bar2, .bar3 {
+   width: 35px;
+   height: 5px;
+   background-color: #333;
+   margin: 6px 0;
+   transition: 0.4s;
+ }
+ 
+ .change .bar1 {
+   transform: rotate(-45deg) translate(-9px, 6px);
+ }
+ 
+ .change .bar2 {opacity: 0;}
+ 
+ .change .bar3 {
+   transform: rotate(45deg) translate(-8px, -8px);
+ }
+
+@media (max-width: 768px) {
+   nav ul{
+      position: absolute;
+      top: 3.5rem;
+      left: -100%;
+   }
+
+   nav ul.active {
+      width: 100%;
+      height: 100vh;
+      background: #ffffffcc;
+      backdrop-filter: blur(5px);
+      left: 0;
+   }
+
+   nav ul li{
+      display: block;
+      font-size: 20px;
+      height: 80px;
+      margin: 0;
+      padding: 30px;
+      width: 100%;
+      text-align: center;
+   }
+   
+   nav ul li:hover{
+      background: #00000077;
+   }
+   
+   nav ul li a{
+      color: #000;
+   }
+   nav ul li a:hover{
+      color: #000;
+   }
+
+   .bars{
+      display: block;
+   }
+}
